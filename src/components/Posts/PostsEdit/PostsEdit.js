@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 
-class PostEdit extends Component {
+class PostsEdit extends Component {
   render() {
     return (
       <div className="container">
@@ -11,6 +11,6 @@ class PostEdit extends Component {
   }
 }
 
-// PostEdit.propTypes = {};
+// PostsEdit.propTypes = {};
 
-export default PostEdit;
+export default PostsEdit;

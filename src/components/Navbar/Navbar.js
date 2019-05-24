@@ -10,10 +10,10 @@ class Navbar extends Component {
     return (
       <div className="d-flex justify-content-between align-items-center">
         {
-          btnLeft ? <Link className="btn btn-light" to={ linkToLeft }>{ btnLeft }</Link> : ''
+          btnLeft ? <Link className="btn btn-secondary" to={ linkToLeft }>{ btnLeft }</Link> : ''
         }
         {
-          btnRight ? <Link className="btn btn-light" to={ linkToRight }>{ btnRight }</Link> : ''
+          btnRight ? <Link className="btn btn-secondary" to={ linkToRight }>{ btnRight }</Link> : ''
         }
       </div>
     );

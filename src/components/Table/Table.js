@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 class Table extends Component {
 
   render() {
-    const { entity: { columns, data, reading, updating, deleting }} = this.props;
+    const { formMetadata: { columns, reading, updating, deleting }, entity } = this.props;
 
     return (
       <div className="mb-4">
         <table className="table table-bordered">
           <thead>
             <tr>
-              <th>ID</th>
               {
                 columns.map((col, index) => (
                   <th key={ index }>{ col }</th>
@@ -22,12 +21,11 @@ class Table extends Component {
           </thead>
           <tbody>
             {
-              data.map((row, key) => (
+              entity.map((row, key) => (
                 <tr key={ key }>
-                  <td className="align-middle">{ key + 1 }</td>
                   {
                     columns.map((col, index) => (
-                      <td key={ index } className="w-100 align-middle">
+                      <td key={ index } className="align-middle">
                         <div className="d-flex align-items-center">
                           { row[col] }
                         </div>
@@ -58,13 +56,13 @@ class Table extends Component {
 }
 
 Table.propTypes = {
-  entity: PropTypes.shape({
+  formMetadata: PropTypes.shape({
     columns: PropTypes.array.isRequired,
-    data: PropTypes.array.isRequired,
     reading: PropTypes.bool,
     updating: PropTypes.bool,
     deleting: PropTypes.bool,
   }).isRequired,
+  entity: PropTypes.array.isRequired,
   onReading: PropTypes.func,
   onUpdating: PropTypes.func,
   onDeleting: PropTypes.func,
